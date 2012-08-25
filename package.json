@@ -1,0 +1,20 @@
+{
+  "name": "node-simple-replace",
+  "version": "0.0.1",
+  "description": "Takes a string, a object hash and replaces every matching placeholder with the value from the object hash",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thomasfr/node-simple-replace.git"
+  },
+  "keywords": [
+    "config",
+    "replace",
+    "placeholder"
+  ],
+  "author": "Thomas Fritz",
+  "license": "BSD"
+}
