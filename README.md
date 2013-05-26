@@ -1,72 +1,55 @@
-Simple Replace
-==============
+# stemplate
 
-'Simple Replace' is a module for node.
-It exports a single function which takes a string, a object hash and replaces every matching placeholder with the value from the object hash. After replacing it returns the new string.
-It uses a "bash-like" variable syntax for its placeholders. At the moment it understands the ':-' bash substituation only. For a better explanation take a look at the examples underneath.
+`stemplate` exports a single function which takes a string and an object.
+It uses CoffeeScript-style placeholders to replace values within the string and
+returns a new string.
 
 ```javascript
 /**
 * @param {string} text         - A Text with placeholders in it you want to replace
-* @param {object} objectHaash  - A Hash object.
+* @param {object} objectHash  - A Hash object.
 */
-function simpleReplace(text, objectHash);
+function stemplate(text, objectHash);
 
 ```
 
-Usage
-=====
+## Usage
 
 Example 1:
 
 ```javascript
-var simpleReplace = require('simpleReplace');
-var exampleString = "Hi, my name is ${myName}";
+var stemplate = require('stemplate');
+var exampleString = "Hi, my name is #{myName}";
 var objectHash = {
     myName: "Thomas"
 }
-console.log(simpleReplace(exampleString, objectHash)); // "Hi, my name is Thomas"
+console.log(stemplate(exampleString, objectHash)); // "Hi, my name is Thomas"
 ```
 
 
 Example 2:
 ```javascript
-var simpleReplace = require('simpleReplace');
-var exampleString = "Hi, my name is ${firstname} ${lastname}";
+var stemplate = require('stemplate');
+var exampleString = "Hi, my name is #{firstname} #{lastname}";
 var objectHash = {
     firstname: "Thomas"
 }
-console.log(simpleReplace(exampleString, objectHash)); // "Hi, my name is Thomas ${lastname}"
+console.log(stemplate(exampleString, objectHash)); // "Hi, my name is Thomas #{lastname}"
 ```
-
-Example 3:
-```javascript
-var simpleReplace = require('simpleReplace');
-var exampleString = "${firstname} ${lastname} - ${kids:-0} kid(s)";
-var objectHash = {
-    firstname: "Thomas",
-    lastname: "Fritz"
-}
-console.log(simpleReplace(exampleString, objectHash)); // "Thomas Fritz - 0 kid(s)"
-```
-
 
 Example 4:
 ```javascript
-var simpleReplace = require('simpleReplace');
-var exampleString = "${firstname} ${lastname} - ${kids:-0} kid(s)";
+var stemplate = require('stemplate');
+var exampleString = "#{firstname} #{lastname} - #{kids} kid(s)";
 var objectHash = {
     firstname: "Thomas",
     lastname: "Fritz",
     kids: 11
 }
-console.log(simpleReplace(exampleString, objectHash)); // "Thomas Fritz - 11 kid(s)"
+console.log(stemplate(exampleString, objectHash)); // "Thomas Fritz - 11 kid(s)"
 ```
 
-
-
-LICENSE
-=======
+## LICENSE
 
 The MIT License
 

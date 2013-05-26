@@ -1,20 +1,24 @@
 {
-  "name": "simple-replace",
-  "version": "0.0.2",
+  "name": "stemplate",
+  "version": "0.0.0",
   "description": "Takes a string, a object hash and replaces every matching placeholder with the value from the object hash",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/thomasfr/node-simple-replace.git"
+    "url": "https://github.com/freewil/stemplate.git"
   },
   "keywords": [
-    "config",
     "replace",
-    "placeholder"
+    "placeholder",
+    "template",
+    "coffee"
   ],
   "author": "Thomas Fritz",
-  "license": "BSD"
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "~1.10.0"
+  }
 }
