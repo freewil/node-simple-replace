@@ -1,5 +1,7 @@
 # stemplate
 
+[![Build Status](https://travis-ci.org/freewil/stemplate.png)](https://travis-ci.org/freewil/stemplate)
+
 `stemplate` exports a single function which takes a string and an object.
 It uses CoffeeScript-style placeholders to replace values within the string and
 returns a new string.
