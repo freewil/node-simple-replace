@@ -39,6 +39,18 @@ var objectHash = {
 console.log(stemplate(exampleString, objectHash)); // "Hi, my name is Thomas #{lastname}"
 ```
 
+Example 3:
+```javascript
+var stemplate = require('stemplate');
+var exampleString = "!{firstname} #{lastname} - #{kids} kid(s)";
+var objectHash = {
+    firstname: '<a href="/profile/thomas">Thomas</a>',
+    lastname: "Fritz",
+    kids: 11
+}
+console.log(stemplate(exampleString, objectHash)); // '<a href="/profile/thomas">Thomas</a> Fritz - 11 kid(s)'
+```
+
 Example 4:
 ```javascript
 var stemplate = require('stemplate');
