@@ -30,4 +30,20 @@ describe('stemplate', function() {
     test(exampleString, objectHash, "Thomas Fritz - 11 kid(s)");
   });
   
+  it('#{} should escape html', function() {
+    var exampleString = 'Hi, my name is #{name}';
+    var objectHash = {
+      name: '<script>alert(1);</script>'
+    };
+    test(exampleString, objectHash, 'Hi, my name is &lt;script&gt;alert(1);&lt;/script&gt;');
+  });
+  
+  it('!{} should not escape html', function() {
+    var exampleString = 'Hi, my name is !{name}';
+    var objectHash = {
+      name: '<script>alert(1);</script>'
+    };
+    test(exampleString, objectHash, 'Hi, my name is <script>alert(1);</script>');
+  });
+  
 });
