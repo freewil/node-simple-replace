@@ -1,6 +1,6 @@
 {
   "name": "stemplate",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Takes a string, a object hash and replaces every matching placeholder with the value from the object hash",
   "main": "index.js",
   "scripts": {
